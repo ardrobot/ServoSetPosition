@@ -1,0 +1,99 @@
+\hypertarget{_servo_set_position_8ino}{\section{Servo\-Set\-Position.\-ino File Reference}
+\label{_servo_set_position_8ino}\index{Servo\-Set\-Position.\-ino@{Servo\-Set\-Position.\-ino}}
+}
+
+
+Arduino sketch to set initial servo calibration.  
+
+
+{\ttfamily \#include \char`\"{}Arduino.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$Servo.\-h$>$}\\*
+\subsection*{Servo Set Position}
+\label{_amgrp0d2faeb5d495fed297f0efccbd8ef931}%
+Sets the calibration position of a standard 180 degree servo \begin{DoxyCopyright}{Copyright}
+(C) 2013 Ardrobot (\href{http://ardrobot.com}{\tt http\-://ardrobot.\-com})
+\end{DoxyCopyright}
+Licensed under the Apache License, Version 2.\-0 (the License); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+\href{http://www.apache.org/licenses/LICENSE-2.0}{\tt http\-://www.\-apache.\-org/licenses/\-L\-I\-C\-E\-N\-S\-E-\/2.\-0}
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an A\-S I\-S B\-A\-S\-I\-S, W\-I\-T\-H\-O\-U\-T W\-A\-R\-R\-A\-N\-T\-I\-E\-S O\-R C\-O\-N\-D\-I\-T\-I\-O\-N\-S O\-F A\-N\-Y K\-I\-N\-D, either express or implied. See the License for the specific language governing permissions and limitations under the License. \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_servo_set_position_8ino_a440f0e10bb28b153f5661c934bc6b89f}{P\-O\-S\-I\-T\-I\-O\-N}~6
+\begin{DoxyCompactList}\small\item\em Position of the servo \#description Use the following position settings\-: \end{DoxyCompactList}\item 
+\#define \hyperlink{_servo_set_position_8ino_a64a5788920049543903e587c2ca9db7d}{S\-E\-R\-V\-O\-P\-I\-N}~8
+\begin{DoxyCompactList}\small\item\em Set Arduino pin where you will connect the servo signal (usually White) wire. \end{DoxyCompactList}\item 
+\hyperlink{class_servo}{Servo} \hyperlink{_servo_set_position_8ino_a79efceea669fb85a732c30f47cf7e59c}{servo}
+\item 
+void \hyperlink{_servo_set_position_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
+\item 
+void \hyperlink{_servo_set_position_8ino_afe461d27b9c48d5921c00d521181f12f}{loop} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Arduino sketch to set initial servo calibration. \begin{DoxyAuthor}{Author}
+Todd Sampson (\href{http://toddsampson.com}{\tt http\-://toddsampson.\-com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2013-\/03-\/01 
+\end{DoxyDate}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_servo_set_position_8ino_a440f0e10bb28b153f5661c934bc6b89f}{\index{Servo\-Set\-Position.\-ino@{Servo\-Set\-Position.\-ino}!P\-O\-S\-I\-T\-I\-O\-N@{P\-O\-S\-I\-T\-I\-O\-N}}
+\index{P\-O\-S\-I\-T\-I\-O\-N@{P\-O\-S\-I\-T\-I\-O\-N}!ServoSetPosition.ino@{Servo\-Set\-Position.\-ino}}
+\subsubsection[{P\-O\-S\-I\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-S\-I\-T\-I\-O\-N~6}}\label{_servo_set_position_8ino_a440f0e10bb28b153f5661c934bc6b89f}
+
+
+Position of the servo \#description Use the following position settings\-: 
+
+\begin{DoxyNote}{Note}
+To use this library (based on Arduino I\-D\-E 1.\-03)\-:
+\end{DoxyNote}
+
+\begin{DoxyEnumerate}
+\item Open this sketch in the Arduino I\-D\-E (\href{http://arduino.cc/en/Main/Software}{\tt http\-://arduino.\-cc/en/\-Main/\-Software})
+\item Set the desired degrees using P\-O\-S\-I\-T\-I\-O\-N below.
+\item Set the servo pin you attached the signal to in step two using S\-E\-R\-V\-O\-P\-I\-N below.
+\item Select your Arduino Board \& Serial Port from the Tools menu.
+\item Click the Verify (checkbox) button to ensure you are not receiving any errors. If everything looks good, click the Upload (right arrow) to load the code on to your Arduino board.
+\item Next, wire your servo the Arduino using jumper wires. \hyperlink{class_servo}{Servo} writes are usually\-: Red = 5\-V, Black = ground, White = Signal)
+\item After the servo is attached, P\-R\-E\-S\-S T\-H\-E A\-R\-D\-U\-I\-N\-O R\-E\-S\-E\-T B\-U\-T\-T\-O\-N. The servo should sweep to the minimum position (0), then the maximum position (180), and finally move to your desired position you set in step two. You need to remove the servo or power down the Arduino within 60 seconds or the calibration loop will run again.
+\end{DoxyEnumerate}
+
+P\-R\-O\-T\-I\-P\-: If you are setting a large number of servos, I recommend connecting a servo extension wire to the Arduino so you can quickly connect and disconnect servos without rewiring three separate jumper wires.
+
+0 = 0 Degrees (Minimum) 1 = 15 Degrees 2 = 30 Degrees 3 = 45 Degrees 4 = 60 Degrees 5 = 75 Degrees 6 = 90 Degrees (Center) 7 = 105 Degrees 8 = 120 Degrees 9 = 135 Degrees 10 = 150 Degrees 11 = 165 Degrees 12 = 180 Degrees (Maximum) \hypertarget{_servo_set_position_8ino_a64a5788920049543903e587c2ca9db7d}{\index{Servo\-Set\-Position.\-ino@{Servo\-Set\-Position.\-ino}!S\-E\-R\-V\-O\-P\-I\-N@{S\-E\-R\-V\-O\-P\-I\-N}}
+\index{S\-E\-R\-V\-O\-P\-I\-N@{S\-E\-R\-V\-O\-P\-I\-N}!ServoSetPosition.ino@{Servo\-Set\-Position.\-ino}}
+\subsubsection[{S\-E\-R\-V\-O\-P\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-E\-R\-V\-O\-P\-I\-N~8}}\label{_servo_set_position_8ino_a64a5788920049543903e587c2ca9db7d}
+
+
+Set Arduino pin where you will connect the servo signal (usually White) wire. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_servo_set_position_8ino_afe461d27b9c48d5921c00d521181f12f}{\index{Servo\-Set\-Position.\-ino@{Servo\-Set\-Position.\-ino}!loop@{loop}}
+\index{loop@{loop}!ServoSetPosition.ino@{Servo\-Set\-Position.\-ino}}
+\subsubsection[{loop}]{\setlength{\rightskip}{0pt plus 5cm}void loop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_servo_set_position_8ino_afe461d27b9c48d5921c00d521181f12f}
+\hypertarget{_servo_set_position_8ino_a4fc01d736fe50cf5b977f755b675f11d}{\index{Servo\-Set\-Position.\-ino@{Servo\-Set\-Position.\-ino}!setup@{setup}}
+\index{setup@{setup}!ServoSetPosition.ino@{Servo\-Set\-Position.\-ino}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_servo_set_position_8ino_a4fc01d736fe50cf5b977f755b675f11d}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_servo_set_position_8ino_a79efceea669fb85a732c30f47cf7e59c}{\index{Servo\-Set\-Position.\-ino@{Servo\-Set\-Position.\-ino}!servo@{servo}}
+\index{servo@{servo}!ServoSetPosition.ino@{Servo\-Set\-Position.\-ino}}
+\subsubsection[{servo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Servo} servo}}\label{_servo_set_position_8ino_a79efceea669fb85a732c30f47cf7e59c}
